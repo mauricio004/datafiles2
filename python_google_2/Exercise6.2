@@ -1,0 +1,12 @@
+"""String lists using enumerate"""
+word_str = str(input('Please enter a word:\n'))
+word_lst = list(word_str)
+word_rvs = []
+
+for i, c in enumerate(word_str):
+    word_rvs.append(word_str[-1 - i])
+
+if word_lst == word_rvs:
+    print ("Yes, {0} is a Palindrome.".format(word_str))
+else:
+    print ("No, the word {0} is NOT a Palindrome.".format(word_str))

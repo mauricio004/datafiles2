@@ -1,0 +1,20 @@
+import random
+a = random.randint(1, 9)
+
+guess = 0
+game = True
+
+while game:
+    user = int(input('Please guess the number: \n'))
+    guess += 1
+    if user == a:
+        print("You guess the number correctly ", a)
+        break
+    elif user > a:
+        print("Your number is too high")
+    elif user < a:
+        print ("Your number if too low")
+
+    game = input("Want to continue playing? True or False\n")
+
+print("Thanks for playing, you guess the number {} times".format(guess))

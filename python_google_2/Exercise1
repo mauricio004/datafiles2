@@ -1,0 +1,24 @@
+from datetime import date
+
+name = input('Enter your name:\n')
+print('Hello: ', name)
+age = int(input('Enter your age:\n'))
+y = date.today().year
+print('You turn 100 years old in the year', y + age)
+message_to_print = 'Give me a number:\n'
+number_to_print = int(input(message_to_print))
+print(number_to_print * message_to_print)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

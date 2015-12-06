@@ -1,0 +1,11 @@
+"""Rock Paper Scissor"""
+game = {'rock': 0, 'scissor': 1, 'paper': 2}
+for key in game:
+    print(key)
+player_a = str(input('Welcome Player A, please choose one item:\n')).lower()
+print('Thanks')
+player_b = str(input('Welcome Player B, please choose one item:\n')).lower()
+print('Thanks')
+
+
+

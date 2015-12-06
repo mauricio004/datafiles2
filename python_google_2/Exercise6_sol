@@ -1,0 +1,10 @@
+"""String lists using simple solution"""
+wrd = input("Please enter a word : ")
+rvs = wrd[::-1]
+print(rvs)
+print(type(rvs))
+print(rvs[0])
+if wrd == rvs:
+    print("This word is a palindrome")
+else:
+    print("This word is not a palindrome")

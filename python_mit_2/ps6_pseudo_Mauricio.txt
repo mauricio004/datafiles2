@@ -1,0 +1,27 @@
+#Decryption
+
+
+In essence, the program needs to test all possible shifts and count
+the number of valid words.
+
+The best shift becomes the shift with the higher number of valid words.
+
+
+Pseudocode
+#Create a dictionary to store the shift and number of valid words.
+
+#For all possible shifts (0 to 25).
+		
+	#Use applyshift method to decrypte the text.
+	
+	#Store decrypted text in a list (consider using string.split function)
+	
+	#For all possible words in the list, check to see if word is valid (use isWord function).
+	
+		#Count the number of valid words and store it in dictionary
+
+
+#Using the dictionary, return the shift with the highest number of valid words.
+
+		
+

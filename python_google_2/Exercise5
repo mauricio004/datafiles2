@@ -1,0 +1,26 @@
+'List overlap'
+import random
+
+# a = [1, 1, 1, 2, 2, 3, 5, 8, 9, 9, 13, 13, 20, 20, 20, 21]
+# b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 13, 20, 21]
+
+z = [random.randrange(0, 50, 1)
+     for i in range(0, 51, 1)]
+z.sort()
+
+a = random.sample(range(1, 100), random.randint(1, 100))
+
+a.sort()
+
+b = random.sample(range(1, 100), random.randint(1, 100))
+b.sort()
+result_list = []
+
+for item_a in a:
+    if item_a in b:
+        if item_a not in result_list:
+            result_list.append(item_a)
+print('z :', z)
+print('a :', a)
+print('b :', b)
+print('result_list :', result_list)

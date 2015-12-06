@@ -1,0 +1,10 @@
+"""Divisor"""
+user_number = int(input('Enter a number:\n'))
+my_list = range(1, user_number + 1)
+result_list = []
+
+for item in my_list:
+    if user_number % item == 0:
+        result_list.append(item)
+
+print(result_list)

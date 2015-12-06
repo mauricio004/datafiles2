@@ -1,0 +1,18 @@
+"""Odd or even"""
+number = int(input('Enter a number:\n'))
+
+if number % 4 == 0:
+    print('even number and multiple of 4')
+elif number % 2 == 0:
+    print('even number')
+else:
+    print('odd number')
+
+num = int(input('Enter a new number to check:\n'))
+check = int(input('Enter a number to divide:\n'))
+result = num / check
+
+if num % check == 0:
+    print(num, 'divides evenly', check)
+else:
+    print(num, 'does not divide evenly by', check)
