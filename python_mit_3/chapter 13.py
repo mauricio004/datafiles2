@@ -78,3 +78,19 @@ def walk(f, d, numSteps):
         f.moveDrunk(d)
     return start.distFrom(f.getLoc(d))
 
+def simWalks(numSteps, numTrials, dClass):
+    return
+
+
+
+def main():
+    l = Location(0.0, 0.0)
+    f = Field()
+    d = UsualDrunk("Mauricio")
+    f.addDrunk(d, l)
+    print f.getLoc(d)
+    print walk(f, d, 100)
+    print f.getLoc(d)
+
+if __name__ == '__main__':
+    main()

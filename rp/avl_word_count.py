@@ -4,6 +4,41 @@ import re
 import unicodedata
 from bs4 import BeautifulSoup
 
+def readDataFromFile(filename):
+    """
+    xxx
+    """
+    customer_id_dict = {}
+    try:
+        with open(filename, "r") as f:
+            # Separate data by customer id.  Store in tuples -> (CustomerID, ils id, ils, plaintext/html text)
+            tuples = re.findall(r'CustomerID:(\d+),(\d+),(.*?),(.*?)(?=CustomerID:)', f.read(), re.DOTALL)
+            # Copy to a dictionary with Customer id as key
+            for text_tuple in tuples:
+                (customer_id, ils_id, ils, text) = text_tuple
+                if customer_id not in customer_id_dict:
+                    customer_id_tuple = (ils, text)
+                    customer_id_dict[customer_id] = customer_id_tuple
+    except Exception as err:
+        print 'Error reading file ' + str(err)
+    return customer_id_dict
+
+
+def readText(customer_id_dict):
+    """
+    """
+    for k, v in customer_id_dict.iteritems():
+        if v[0] == 'ForRent.com':
+            print 'for rent'
+        elif v[0] == 'Hotpads / Zillow':
+            soup = BeautifulSoup(v[1])
+            elems = soup.select('div')
+
+            text = elems[0].getText()
+            # table = soup.find('table')
+            # text = table.find_all('br')
+        else:
+            print 'unknown ils'
 
 def convertToText(filename):
     """Returns an string
@@ -11,9 +46,10 @@ def convertToText(filename):
     filename: Delimited file with text and html.  Convert html to readable format.  Convert unicode to string
     """
     with open(filename, "r") as f:
-        raw = BeautifulSoup(f).get_text()
-    # raw_text = unicodedata.normalize('NFKD', raw).encode('ascii', 'ignore')
-    return raw
+        #raw = BeautifulSoup(f).get_text()
+        soup = BeautifulSoup(f)
+        # raw_text = unicodedata.normalize('NFKD', raw).encode('ascii', 'ignore')
+    return soup
 
 
 def readData(rawtxt):
@@ -25,18 +61,13 @@ def readData(rawtxt):
         """
         customer_id_dict = {}
         # Separate data by customer id.  Store in tuples
-        tuples = re.findall(r'CustomerID:(\d+).*?(Comments:.*?)(?=CustomerID:)', rawtxt, re.DOTALL)
+        tuples = re.findall(r'CustomerID:(\d+),(\d+),(.*?(Comments:.*?)(?=CustomerID:)', rawtxt, re.DOTALL)
         # Read data just in comments fields.  Split comments text into words.  Copy to a dictionary with
         # Customer id as key and split comments text as value
         for text_tuple in tuples:
             (customer_id, text) = text_tuple
             if customer_id not in customer_id_dict:
-                text_match = re.findall(r'Comments:(.*?)ForRent.com', text, re.DOTALL)
-                if len(text_match) >= 1:
-                    text_match_list = text_match[0].split()
-                else:
-                    text_match_list = []
-                customer_id_dict[customer_id] = text_match_list
+                print 's'
         return customer_id_dict
 
 
@@ -54,15 +85,21 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dataforpython/for_rent_all.csv"
-    try:
-        t = convertToText(filename)
-    except IOError:
-        print 'Cannot open file'
+    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_sample.txt"
+    cust_id_dict = readDataFromFile(filename)
+    readText(cust_id_dict)
 
-    word_dictionary = countWords(readData(t))
-    for k in sorted(word_dictionary.keys()):
-        print k, '%', word_dictionary[k]
+    # for k, v in cust_id_dict.iteritems():
+    #     print k, ', ', v[0]
+
+    # try:
+    #     t = convertToText(filename)
+    # except IOError:
+    #     print 'Cannot open file'
+    #
+    # word_dictionary = countWords(readData(t))
+    # for k in sorted(word_dictionary.keys()):
+    #     print k, '%', word_dictionary[k]
 
 
 
