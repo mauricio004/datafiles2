@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import csv
 import re
+from bs4 import BeautifulSoup, NavigableString, Tag
 import unicodedata
-from bs4 import BeautifulSoup
 
 def readDataFromFile(filename):
     """
@@ -31,10 +31,18 @@ def readText(customer_id_dict):
         if v[0] == 'ForRent.com':
             print 'for rent'
         elif v[0] == 'Hotpads / Zillow':
-            soup = BeautifulSoup(v[1])
-            elems = soup.select('div')
+            soup = BeautifulSoup(v[1], 'html5lib')
+            for br in soup.findAll('br'):
+                next = br.nextSibling
+                if not (next and isinstance(next, NavigableString)):
+                    continue
+                next2 = next.nextSibling
+                if next2 and isinstance(next2, Tag) and next2.name == 'br':
+                    next = next.encode('ascii', 'ignore')
+                    text = str(next).strip()
+                    if text:
+                        print "Found:", next
 
-            text = elems[0].getText()
             # table = soup.find('table')
             # text = table.find_all('br')
         else:
@@ -85,7 +93,7 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_sample.txt"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_1_month.csv"
     cust_id_dict = readDataFromFile(filename)
     readText(cust_id_dict)
 
