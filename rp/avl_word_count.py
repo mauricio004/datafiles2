@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import csv
-import re
+import re, os, csv
 from bs4 import BeautifulSoup, NavigableString, Tag
 import unicodedata
 
@@ -27,9 +27,16 @@ def readDataFromFile(filename):
 def readText(customer_id_dict):
     """
     """
+    customer_id_results_dict = {}
+
     for k, v in customer_id_dict.iteritems():
         if v[0] == 'ForRent.com':
-            print 'for rent'
+            if k not in customer_id_results_dict:
+                # Search for comments text
+                comments_match = re.search(r'Comments:(.*?)ForRent.com', v[1], re.DOTALL)
+                # Add to dictionary if find comments text
+                if comments_match:
+                    customer_id_results_dict[k] = comments_match.group(1).strip()
         elif v[0] == 'Hotpads / Zillow':
             soup = BeautifulSoup(v[1], 'html5lib')
             for br in soup.findAll('br'):
@@ -41,12 +48,10 @@ def readText(customer_id_dict):
                     next = next.encode('ascii', 'ignore')
                     text = str(next).strip()
                     if text:
-                        print "Found:", next
-
-            # table = soup.find('table')
-            # text = table.find_all('br')
+                        print "Found:" + k, next
         else:
             print 'unknown ils'
+    return customer_id_results_dict
 
 def convertToText(filename):
     """Returns an string
@@ -93,9 +98,17 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_1_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
     cust_id_dict = readDataFromFile(filename)
-    readText(cust_id_dict)
+    results_dict = readText(cust_id_dict)
+
+    # Write to file
+    os.chdir('C:/Users/mflores1/dropbox/Mauricio/')
+
+    with open('email_results.csv', 'w') as to_write:
+        writer = csv.writer(to_write, delimiter=',')
+        for a in results_dict.keys():
+            writer.writerow([a, results_dict[a]])
 
     # for k, v in cust_id_dict.iteritems():
     #     print k, ', ', v[0]
