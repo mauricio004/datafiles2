@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+import re
+import os
 import csv
-import re, os, csv
-from bs4 import BeautifulSoup, NavigableString, Tag
 import unicodedata
+
+from bs4 import BeautifulSoup, NavigableString, Tag
+
 
 def readDataFromFile(filename):
     """
@@ -34,9 +37,12 @@ def readText(customer_id_dict):
             if k not in customer_id_results_dict:
                 # Search for comments text
                 comments_match = re.search(r'Comments:(.*?)ForRent.com', v[1], re.DOTALL)
-                # Add to dictionary if find comments text
+                # If find match, add key and text to dictionary
                 if comments_match:
                     customer_id_results_dict[k] = comments_match.group(1).strip()
+                # If not match, add key and 'CannotGetData'
+                else:
+                    customer_id_results_dict[k] = 'CannotGetData'
         elif v[0] == 'Hotpads / Zillow':
             soup = BeautifulSoup(v[1], 'html5lib')
             for br in soup.findAll('br'):
@@ -49,6 +55,30 @@ def readText(customer_id_dict):
                     text = str(next).strip()
                     if text:
                         print "Found:" + k, next
+        elif v[0] == 'ApartmentGuide.com':
+            if k not in customer_id_results_dict:
+                # Search for comments text
+                comments_match = re.search(r'Comments:(.*?)-----', v[1], re.DOTALL)
+                # If find match, add key and text to dictionary
+                if comments_match:
+                    customer_id_results_dict[k] = comments_match.group(1).strip()
+                # If not match, add key and 'CannotGetData'
+                else:
+                    customer_id_results_dict[k] = 'CannotGetData'
+        elif v[0] == 'New Property Website':
+            soup = BeautifulSoup(v[1], 'html5lib')
+            # Convert Unicode string to a a string
+            email_text = unicodedata.normalize('NFKD', soup.get_text()).encode('ascii', 'ignore')
+            comments_match = re.search(r'Comments:(.*)', email_text, re.DOTALL)
+            if k not in customer_id_results_dict:
+                # Search for comments text
+                comments_match = re.search(r'Comments:(.*) ', email_text, re.DOTALL)
+                # If find match, add key and text to dictionary
+                if comments_match:
+                    customer_id_results_dict[k] = comments_match.group(1).strip()
+                # If not match, add key and 'CannotGetData'
+                else:
+                    customer_id_results_dict[k] = 'CannotGetData'
         else:
             print 'unknown ils'
     return customer_id_results_dict
@@ -98,7 +128,7 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/property_website_sample.txt"
     cust_id_dict = readDataFromFile(filename)
     results_dict = readText(cust_id_dict)
 
