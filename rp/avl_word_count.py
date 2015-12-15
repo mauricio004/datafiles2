@@ -128,7 +128,7 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/property_website_sample.txt"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
     cust_id_dict = readDataFromFile(filename)
     results_dict = readText(cust_id_dict)
 
