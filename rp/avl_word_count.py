@@ -19,9 +19,15 @@ def readDataFromFile(filename):
             # Copy to a dictionary with Customer id as key
             for text_tuple in tuples:
                 (customer_id, ils_id, ils, text) = text_tuple
-                if customer_id not in customer_id_dict:
-                    customer_id_tuple = (ils, text)
-                    customer_id_dict[customer_id] = customer_id_tuple
+                if text_tuple[2] == 'Hotpads / Zillow':
+                    if customer_id not in customer_id_dict:
+                        if text_tuple[3].startswith('<html>'):
+                            customer_id_tuple = (ils, text)
+                            customer_id_dict[customer_id] = customer_id_tuple
+                else:
+                        customer_id_tuple = (ils, text)
+                        customer_id_dict[customer_id] = customer_id_tuple
+
     except Exception as err:
         print 'Error reading file ' + str(err)
     return customer_id_dict
@@ -35,12 +41,19 @@ def readText(customer_id_dict):
     for k, v in customer_id_dict.iteritems():
         if v[0] == 'ForRent.com':
             if k not in customer_id_results_dict:
-                # Search for comments text
+                # Search for text after comments
                 comments_match = re.search(r'Comments:(.*?)ForRent.com', v[1], re.DOTALL)
                 # If find match, add key and text to dictionary
                 if comments_match:
-                    customer_id_results_dict[k] = comments_match.group(1).strip()
-                # If not match, add key and 'CannotGetData'
+                    # Strip text
+                    text = comments_match.group(1).strip()
+                    # Add customer id and actual text to dictionary
+                    if len(text) > 1:
+                        customer_id_results_dict[k] = comments_match.group(1).strip()
+                    # Add customer id and 'not specified' text to dictionary
+                    else:
+                        customer_id_results_dict[k] = 'Not Specified'
+                # else, add key and 'CannotGetData'
                 else:
                     customer_id_results_dict[k] = 'CannotGetData'
         elif v[0] == 'Hotpads / Zillow':
@@ -53,8 +66,11 @@ def readText(customer_id_dict):
                 if next2 and isinstance(next2, Tag) and next2.name == 'br':
                     next = next.encode('ascii', 'ignore')
                     text = str(next).strip()
-                    if text:
-                        print "Found:" + k, next
+                    if k not in customer_id_results_dict:
+                        if text:
+                            customer_id_results_dict[k] = text.strip()
+                        else:
+                            customer_id_results_dict[k] = 'Not Specified'
         elif v[0] == 'ApartmentGuide.com':
             if k not in customer_id_results_dict:
                 # Search for comments text
@@ -128,7 +144,7 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_4_month.csv"
     cust_id_dict = readDataFromFile(filename)
     results_dict = readText(cust_id_dict)
 
