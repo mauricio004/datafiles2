@@ -25,9 +25,9 @@ def readDataFromFile(filename):
                             customer_id_tuple = (ils, text)
                             customer_id_dict[customer_id] = customer_id_tuple
                 else:
+                    if customer_id not in customer_id_dict:
                         customer_id_tuple = (ils, text)
                         customer_id_dict[customer_id] = customer_id_tuple
-
     except Exception as err:
         print 'Error reading file ' + str(err)
     return customer_id_dict
@@ -72,32 +72,32 @@ def readText(customer_id_dict):
                         else:
                             customer_id_results_dict[k] = 'Not Specified'
         elif v[0] == 'ApartmentGuide.com':
-            if k not in customer_id_results_dict:
+            if k not in customer_id_dict:
                 # Search for comments text
                 comments_match = re.search(r'Comments:(.*?)-----', v[1], re.DOTALL)
                 # If find match, add key and text to dictionary
                 if comments_match:
-                    customer_id_results_dict[k] = comments_match.group(1).strip()
+                    customer_id_dict[k] = comments_match.group(1).strip()
                 # If not match, add key and 'CannotGetData'
                 else:
-                    customer_id_results_dict[k] = 'CannotGetData'
+                    customer_id_dict[k] = 'CannotGetData'
         elif v[0] == 'New Property Website':
             soup = BeautifulSoup(v[1], 'html5lib')
             # Convert Unicode string to a a string
             email_text = unicodedata.normalize('NFKD', soup.get_text()).encode('ascii', 'ignore')
             comments_match = re.search(r'Comments:(.*)', email_text, re.DOTALL)
-            if k not in customer_id_results_dict:
+            if k not in customer_id_dict:
                 # Search for comments text
                 comments_match = re.search(r'Comments:(.*) ', email_text, re.DOTALL)
                 # If find match, add key and text to dictionary
                 if comments_match:
-                    customer_id_results_dict[k] = comments_match.group(1).strip()
+                    customer_id_dict[k] = comments_match.group(1).strip()
                 # If not match, add key and 'CannotGetData'
                 else:
-                    customer_id_results_dict[k] = 'CannotGetData'
+                    customer_id_dict[k] = 'CannotGetData'
         else:
             print 'unknown ils'
-    return customer_id_results_dict
+    return customer_id_dict
 
 def convertToText(filename):
     """Returns an string
@@ -144,29 +144,19 @@ def countWords(customer_dict):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_4_month.csv"
-    cust_id_dict = readDataFromFile(filename)
-    results_dict = readText(cust_id_dict)
+    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
+    customer_id_dict = readText(readDataFromFile(filename))
 
     # Write to file
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/')
 
-    with open('email_results.csv', 'w') as to_write:
-        writer = csv.writer(to_write, delimiter=',')
-        for a in results_dict.keys():
-            writer.writerow([a, results_dict[a]])
-
-    # for k, v in cust_id_dict.iteritems():
-    #     print k, ', ', v[0]
-
-    # try:
-    #     t = convertToText(filename)
-    # except IOError:
-    #     print 'Cannot open file'
-    #
-    # word_dictionary = countWords(readData(t))
-    # for k in sorted(word_dictionary.keys()):
-    #     print k, '%', word_dictionary[k]
+    try:
+        with open('email_results.csv', 'w') as to_write:
+            writer = csv.writer(to_write, delimiter=',')
+            for a in customer_id_dict.keys():
+                writer.writerow([a, customer_id_dict[a]])
+    except Exception as err:
+        print 'Error writing file ' + str(err)
 
 
 

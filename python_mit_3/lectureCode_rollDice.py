@@ -26,8 +26,8 @@ def runSim(goal, numTrials):
         total += getTarget(goal)
     print 'Average number of tries =', total/float(numTrials)
 
-runSim('11111', 2)
-runSim('54324', 100)
+runSim('11111', 100)
+# runSim('54324', 100)
 
 def atLeastOneOne(numRolls, numTrials):
     numSuccess = 0
