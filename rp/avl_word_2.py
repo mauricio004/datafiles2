@@ -27,37 +27,70 @@ def readText(tuples):
         if ils == 'ForRent.com':
             # Search for comments' text
             comments_match = re.search(r'Comments:(.*?)ForRent.com', text, re.DOTALL)
+            # Search for date
             date_match = re.search(r'Date/Time:(.*?)To:', text, re.DOTALL)
+            # Add date
             if date_match:
+                # Read data for date text
                 customer_id_date_str = date_match.group(1).strip()
                 try:
                     customer_id_date = time.strptime(customer_id_date_str, '%m/%d/%Y %I:%M:%S %p')
+                # Add default date '01/01/2100'
                 except ValueError:
                     customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+            # Add default date '01/01/2100'
             else:
-                customer_id_date = customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
-
+                customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+            # Add comment's text
             if comments_match:
                 customer_id_comments = comments_match.group(1).strip()
+            # Add 'cannotFindCommentsText'
             else:
                 customer_id_comments = 'cannotFindCommentsText'
-
+            # Add customer id
             if customer_id not in customer_id_dict:
                 customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+            # Customer id already in dictionary
             else:
+                # Find customer id's date
                 date_in_dict = customer_id_dict[customer_id][0]
+                # Move to next customer id
                 if not comments_match:
                     continue
+                # Replace customer id
                 elif customer_id_date < date_in_dict:
                         customer_id_dict.pop(customer_id, None)
                         customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+        elif ils == 'Hotpads / Zillow':
+            soup = BeautifulSoup(text, 'html5lib')
+            for br in soup.findAll('br'):
+                next = br.nextSibling
+                if not (next and isinstance(next, NavigableString)):
+                    continue
+                next2 = next.nextSibling
+                if next2 and isinstance(next2, Tag) and next2.name == 'br':
+                    next = next.encode('ascii', 'ignore')
+                    comments_text = str(next).strip()
+                    # Add customer id
+                    if customer_id not in customer_id_dict:
+                        customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+                        customer_id_dict[customer_id] = (customer_id_date, comments_text)
+                    # Customer id already in dictionary
+                    else:
+                        # Move to next customer id
+                        if not comments_text:
+                            continue
+                        # Replace customer id
+                        else:
+                            customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+                            customer_id_dict.pop(customer_id, None)
+                            customer_id_dict[customer_id] = (customer_id_date, comments_text)
+
     return customer_id_dict
 
 
-
-
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/for_rent_4_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_4_month.csv"
     customer_id_dict = readText(readDataFromFile(filename))
 
     # Write to file
