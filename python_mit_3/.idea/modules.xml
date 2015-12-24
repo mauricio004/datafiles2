@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ci/.idea/ci.iml" filepath="$PROJECT_DIR$/../ci/.idea/ci.iml" />
       <module fileurl="file://$PROJECT_DIR$/../python_google_2/.idea/python_google_2.iml" filepath="$PROJECT_DIR$/../python_google_2/.idea/python_google_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../python_mit_2/.idea/python_mit.iml" filepath="$PROJECT_DIR$/../python_mit_2/.idea/python_mit.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python_mit_3.iml" filepath="$PROJECT_DIR$/.idea/python_mit_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python_think_like_data_scientist/.idea/python_think_like_data_scientist.iml" filepath="$PROJECT_DIR$/../python_think_like_data_scientist/.idea/python_think_like_data_scientist.iml" />
       <module fileurl="file://$PROJECT_DIR$/../rp/.idea/rp.iml" filepath="$PROJECT_DIR$/../rp/.idea/rp.iml" />
     </modules>
   </component>

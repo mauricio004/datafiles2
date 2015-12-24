@@ -2,10 +2,12 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 2.7.10 (C:\Python27\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="python_mit" />
     <orderEntry type="module" module-name="python_google_2" />
     <orderEntry type="module" module-name="rp" />
+    <orderEntry type="module" module-name="ci" />
+    <orderEntry type="module" module-name="python_think_like_data_scientist" />
   </component>
 </module>
