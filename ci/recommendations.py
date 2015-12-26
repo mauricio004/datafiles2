@@ -71,7 +71,7 @@ def sim_distance(prefs, person1, person2):
 
     return 1 / (1 + sqrt(sum_of_squares))
 
-print sim_distance(critics, 'Lisa Rose', 'Gene Seymour')
+# print sim_distance(critics, 'Lisa Rose', 'Gene Seymour')
 
 
 # Returns the Pearson correlation coefficient for p1 and p1
@@ -108,7 +108,7 @@ def sim_pearson(prefs, p1, p2):
     r = num / den
     return r
 
-print sim_pearson(critics, 'Lisa Rose', 'Gene Seymour')
+# print sim_pearson(critics, 'Lisa Rose', 'Gene Seymour')
 
 
 # Returns the best matches for person from the prefs dictionary
@@ -120,7 +120,7 @@ def topMatches(prefs, person, n=5, similarity=sim_pearson):
 
     return scores[0:n]
 
-print topMatches(critics, 'Toby', n=3)
+# print topMatches(critics, 'Toby', n=3)
 
 
 # Get recommendations for a person using a weighted average
@@ -138,6 +138,7 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
         if sim <= 0:
             continue
         for item in prefs[other]:
+
             # only score movies I have not see yet.
             if item not in prefs[person] or prefs[person][item] == 0:
                 # Similarity * Score
@@ -155,4 +156,43 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
     rankings.reverse()
     return rankings
 
-print getRecommendations(critics, 'Toby')
+# print getRecommendations(critics, 'Toby')
+
+
+def transformPerfs(prefs):
+    result = {}
+    for person in prefs:
+        for item in prefs[person]:
+            result.setdefault(item, {})
+
+            # Flip item and person
+            result[item][person] = prefs[person][item]
+    return result
+
+
+
+# movies = transformPerfs(critics)
+# print movies
+# print topMatches(movies, 'Superman Returns')
+# print getRecommendations(movies, 'Just My Luck')
+
+
+def calculatesSimilarItems(prefs, n=10):
+    # Create a dictionary of items showing which other item they
+    # are most similar to.
+    result={}
+
+    # Invert the preference matrix to be item-centric
+    itemPrefs = transformPerfs(prefs)
+    c=0
+    for item in itemPrefs:
+        # Status update for large datasets
+        c+=1
+        if c % 100 == 0:
+            print "%d / %d" % (c, len(itemPrefs))
+        # Find the most similar items to this one
+        scores = topMatches(itemPrefs, item, n=n, similarity=sim_distance)
+        result[item] = scores
+    return result
+
+print calculatesSimilarItems(critics)
