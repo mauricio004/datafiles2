@@ -180,14 +180,14 @@ def transformPerfs(prefs):
 def calculatesSimilarItems(prefs, n=10):
     # Create a dictionary of items showing which other item they
     # are most similar to.
-    result={}
+    result = {}
 
     # Invert the preference matrix to be item-centric
     itemPrefs = transformPerfs(prefs)
-    c=0
+    c = 0
     for item in itemPrefs:
         # Status update for large datasets
-        c+=1
+        c += 1
         if c % 100 == 0:
             print "%d / %d" % (c, len(itemPrefs))
         # Find the most similar items to this one
@@ -196,3 +196,50 @@ def calculatesSimilarItems(prefs, n=10):
     return result
 
 print calculatesSimilarItems(critics)
+
+def getRecommendedItems(prefs, itemMatch, user):
+    userRatings = prefs[user]
+    scores = {}
+    totalSim = {}
+    # Loop over items rated by this user
+    for (item, rating) in userRatings.items():
+        # Loop over items similar to this one
+        for (similarity, item2) in itemMatch[item]:
+            # Ignore if this user has already rated this item
+            if item2 in userRatings:
+                continue
+            # Weighted sum of rating times similarity
+            scores.setdefault(item2, 0)
+            scores[item2] += similarity * rating
+            # Sum of all the similarities
+            totalSim.setdefault(item2, 0)
+            totalSim[item2] += similarity
+    # Divide each total score by total weighting to get an average
+    rankings = [(score / totalSim[item], item) for (item, score) in
+                scores.items()]
+    # Return the rankings from highest to lowest
+    rankings.sort()
+    rankings.reverse()
+    return rankings
+
+itemsim = calculatesSimilarItems(critics)
+print getRecommendedItems(critics, itemsim, 'Toby')
+
+def loadMoviesLens(path = 'C:/Users/mflores1/datafiles2/ci/ml-100k'):
+
+    # Get movies titles
+    movies = {}
+    for line in open(path+'/u.item'):
+        (id, title) = line.split('|')[0:2]
+        movies[id] = title
+
+    # Load data
+    prefs = {}
+    for line in open(path+'/u.data'):
+        (user, movieid, rating, ts) = line.split('\t')
+        prefs.setdefault(user, {})
+        prefs[user][movies[movieid]] = float(rating)
+    return prefs
+
+prefs = loadMoviesLens()
+print getRecommendations(prefs, '87')

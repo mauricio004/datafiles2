@@ -58,8 +58,6 @@ class Position(object):
         return "(%0.2f, %0.2f)" % (self.x, self.y)
 
 
-
-
 # === Problem 1
 class RectangularRoom(object):
     """
@@ -164,8 +162,6 @@ class RectangularRoom(object):
 # print rr.isTileCleaned(5, 9)
 
 
-
-
 class Robot(object):
     """
     Represents a robot cleaning a particular room.
@@ -189,6 +185,7 @@ class Robot(object):
         self.speed = speed
         self.direction = random.randrange(0, 360)
         self.position = self.room.getRandomPosition()
+        self.room.cleanTileAtPosition(self.position)
 
     def getRobotPosition(self):
         """
@@ -232,16 +229,6 @@ class Robot(object):
         """
         raise NotImplementedError # don't change this!
 
-# room = RectangularRoom(5, 5)
-# r = Robot(room, 5)
-# p = Position(3.3, 4.5)
-#
-# print r.speed
-# print r.direction
-# print r.position.x
-# print r.position.y
-
-
 
 # === Problem 2
 class StandardRobot(Robot):
@@ -259,10 +246,51 @@ class StandardRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        raise NotImplementedError
+        pos = self.getRobotPosition()
+        new_pos = pos.getNewPosition(self.direction, self.speed)
+
+        if self.room.isPositionInRoom(new_pos):
+            self.setRobotPosition(new_pos)
+            self.room.cleanTileAtPosition(new_pos)
+        else:
+            self.setRobotDirection(random.randrange(0, 360))
+
+
+
+
 
 # Uncomment this line to see your implementation of StandardRobot in action!
-# testRobotMovement(StandardRobot, RectangularRoom)
+testRobotMovement(StandardRobot, RectangularRoom)
+
+# Create an instance of room and Standard Robot
+rm = RectangularRoom(5, 8)
+srob = StandardRobot(rm, 1.0)
+
+# Check position
+print 'Default Position:', srob.getRobotPosition()
+
+# Set a position
+pos = Position(1.5, 2.5)
+srob.setRobotPosition(pos)
+print 'Set Position to:', pos
+
+# Check new position
+print 'New Position:', srob.getRobotPosition()
+
+# Check direction
+print 'Default Direction:', srob.getRobotDirection()
+
+# Set a direction
+srob.setRobotDirection(90)
+
+# Check new dirextion
+print 'New Direction:', srob.getRobotDirection()
+
+# update position and clean
+srob.updatePositionAndClean()
+
+# print new position
+print 'new Position:', srob.getRobotPosition()
 
 
 # === Problem 3
