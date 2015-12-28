@@ -257,40 +257,38 @@ class StandardRobot(Robot):
 
 
 
-
-
 # Uncomment this line to see your implementation of StandardRobot in action!
-testRobotMovement(StandardRobot, RectangularRoom)
+# testRobotMovement(StandardRobot, RectangularRoom)
 
 # Create an instance of room and Standard Robot
-rm = RectangularRoom(5, 8)
-srob = StandardRobot(rm, 1.0)
+# rm = RectangularRoom(5, 8)
+# srob = StandardRobot(rm, 1.0)
 
 # Check position
-print 'Default Position:', srob.getRobotPosition()
+# print 'Default Position:', srob.getRobotPosition()
 
 # Set a position
-pos = Position(1.5, 2.5)
-srob.setRobotPosition(pos)
-print 'Set Position to:', pos
+# pos = Position(1.5, 2.5)
+# srob.setRobotPosition(pos)
+# print 'Set Position to:', pos
 
 # Check new position
-print 'New Position:', srob.getRobotPosition()
+# print 'New Position:', srob.getRobotPosition()
 
 # Check direction
-print 'Default Direction:', srob.getRobotDirection()
+# print 'Default Direction:', srob.getRobotDirection()
 
 # Set a direction
-srob.setRobotDirection(90)
+# srob.setRobotDirection(90)
 
 # Check new dirextion
-print 'New Direction:', srob.getRobotDirection()
+# print 'New Direction:', srob.getRobotDirection()
 
 # update position and clean
-srob.updatePositionAndClean()
+# srob.updatePositionAndClean()
 
 # print new position
-print 'new Position:', srob.getRobotPosition()
+# print 'new Position:', srob.getRobotPosition()
 
 
 # === Problem 3
@@ -312,10 +310,28 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     robot_type: class of robot to be instantiated (e.g. StandardRobot or
                 RandomWalkRobot)
     """
-    raise NotImplementedError
+
+    for trial in range(num_trials):
+        rm = RectangularRoom(width, height)
+        rbt = robot_type(rm, speed)
+        count = 0
+        while (float(rm.getNumCleanedTiles())/float(rm.getNumTiles())) < min_coverage:
+            rbt.updatePositionAndClean()
+            count += 1
+            t1 = float(rm.getNumCleanedTiles())
+            t2 = float(rm.getNumTiles())
+            r = t1/t2
+
+    print count
+
+
+
+
+
+
 
 # Uncomment this line to see how much your simulation takes on average
-##print  runSimulation(1, 1.0, 10, 10, 0.75, 30, StandardRobot)
+print runSimulation(1, 1.0, 10, 10, 0.75, 1, StandardRobot)
 
 
 # === Problem 4

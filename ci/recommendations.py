@@ -195,7 +195,7 @@ def calculatesSimilarItems(prefs, n=10):
         result[item] = scores
     return result
 
-print calculatesSimilarItems(critics)
+# print calculatesSimilarItems(critics)
 
 def getRecommendedItems(prefs, itemMatch, user):
     userRatings = prefs[user]
@@ -223,23 +223,23 @@ def getRecommendedItems(prefs, itemMatch, user):
     return rankings
 
 itemsim = calculatesSimilarItems(critics)
-print getRecommendedItems(critics, itemsim, 'Toby')
+# print getRecommendedItems(critics, itemsim, 'Toby')
 
-def loadMoviesLens(path = 'C:/Users/mflores1/datafiles2/ci/ml-100k'):
-
-    # Get movies titles
-    movies = {}
-    for line in open(path+'/u.item'):
-        (id, title) = line.split('|')[0:2]
-        movies[id] = title
-
-    # Load data
-    prefs = {}
-    for line in open(path+'/u.data'):
-        (user, movieid, rating, ts) = line.split('\t')
-        prefs.setdefault(user, {})
-        prefs[user][movies[movieid]] = float(rating)
-    return prefs
-
-prefs = loadMoviesLens()
-print getRecommendations(prefs, '87')
+# def loadMoviesLens(path = 'C:/Users/mflores1/datafiles2/ci/ml-100k'):
+#
+#     # Get movies titles
+#     movies = {}
+#     for line in open(path+'/u.item'):
+#         (id, title) = line.split('|')[0:2]
+#         movies[id] = title
+#
+#     # Load data
+#     prefs = {}
+#     for line in open(path+'/u.data'):
+#         (user, movieid, rating, ts) = line.split('\t')
+#         prefs.setdefault(user, {})
+#         prefs[user][movies[movieid]] = float(rating)
+#     return prefs
+#
+# prefs = loadMoviesLens()
+# print getRecommendations(prefs, '87')
