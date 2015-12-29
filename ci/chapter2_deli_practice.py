@@ -95,3 +95,29 @@ def calculateSimilarItems(prefs, n):
 # ToDo
 # Movies data, get recommendations for user '87'
 # Use .getRecommendations and .getRecommendedItems functions to compare
+
+# Create a dictionary with data
+
+def readDataMovieLens(path='C:/Users/mflores1/Dropbox/Mauricio/ci/chapter_2/ml-100k'):
+    # Get movie titles
+    movies = {}
+    for line in open(path+'/u.item'):
+        (movie_id, movie_tile) = line.split('|')[0:2]
+        movies[movie_id] = movie_tile
+
+    # Load data
+    prefs = {}
+    for line in open(path+'/u.data'):
+        (user_id, movie_id, rating, ts) = line.split('\t')
+        prefs.setdefault(user_id, {})
+        prefs[user_id][movies[movie_id]] = float(rating)
+
+    return prefs
+
+
+prefs = readDataMovieLens()
+# print len(prefs['87'])
+
+# print topMatches(prefs, '87', 10)[0:30]
+print calculateSimilarItems(prefs, n=5)
+

@@ -256,7 +256,6 @@ class StandardRobot(Robot):
             self.setRobotDirection(random.randrange(0, 360))
 
 
-
 # Uncomment this line to see your implementation of StandardRobot in action!
 # testRobotMovement(StandardRobot, RectangularRoom)
 
@@ -292,6 +291,7 @@ class StandardRobot(Robot):
 
 
 # === Problem 3
+
 def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
                   robot_type):
     """
@@ -311,28 +311,27 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
                 RandomWalkRobot)
     """
 
+    trials_lst = []
+    rbts_lst = []
+
     for trial in range(num_trials):
         rm = RectangularRoom(width, height)
-        rbt = robot_type(rm, speed)
+        del rbts_lst[:]
+        for r in range(num_robots):
+            rbt = robot_type(rm, speed)
+            rbts_lst.append(rbt)
         count = 0
         while (float(rm.getNumCleanedTiles())/float(rm.getNumTiles())) < min_coverage:
-            rbt.updatePositionAndClean()
+            for r in rbts_lst:
+                r.updatePositionAndClean()
             count += 1
-            t1 = float(rm.getNumCleanedTiles())
-            t2 = float(rm.getNumTiles())
-            r = t1/t2
+        trials_lst.append(count)
+    mean = sum(trials_lst) / float(num_trials)
 
-    print count
-
-
-
-
-
-
+    return mean
 
 # Uncomment this line to see how much your simulation takes on average
-print runSimulation(1, 1.0, 10, 10, 0.75, 1, StandardRobot)
-
+# print runSimulation(2, 1.0, 10, 12, 0.96, 1, StandardRobot)
 
 # === Problem 4
 class RandomWalkRobot(Robot):
@@ -347,8 +346,17 @@ class RandomWalkRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        raise NotImplementedError
+        pos = self.getRobotPosition()
+        new_pos = pos.getNewPosition(self.direction, self.speed)
 
+        if self.room.isPositionInRoom(new_pos):
+            self.setRobotPosition(new_pos)
+            self.setRobotDirection(random.randrange(0, 360))
+            self.room.cleanTileAtPosition(new_pos)
+        else:
+            self.setRobotDirection(random.randrange(0, 360))
+
+# testRobotMovement(RandomWalkRobot, RectangularRoom)
 
 def showPlot1(title, x_label, y_label):
     """
@@ -361,8 +369,8 @@ def showPlot1(title, x_label, y_label):
         print "Plotting", num_robots, "robots..."
         times1.append(runSimulation(num_robots, 1.0, 20, 20, 0.8, 20, StandardRobot))
         times2.append(runSimulation(num_robots, 1.0, 20, 20, 0.8, 20, RandomWalkRobot))
-    pylab.plot(num_robot_range, times1)
-    pylab.plot(num_robot_range, times2)
+    pylab.plot(num_robot_range, times1, 'b+')
+    pylab.plot(num_robot_range, times2, 'mo')
     pylab.title(title)
     pylab.legend(('StandardRobot', 'RandomWalkRobot'))
     pylab.xlabel(x_label)
@@ -400,9 +408,13 @@ def showPlot2(title, x_label, y_label):
 #       (... your call here ...)
 #
 
+showPlot1('Robot Type Comparison', 'Number of robots', 'Time steps')
+
 #
 # 2) Write a function call to showPlot2 that generates an appropriately-labeled
 #     plot.
 #
 #       (... your call here ...)
 #
+
+# showPlot2('Title', 'x', 'y')
