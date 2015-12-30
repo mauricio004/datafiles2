@@ -22,11 +22,11 @@ def readDataFromFile(filename):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/hot_pad_1_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_guide_1_month.csv"
     cust_id_lst = readDataFromFile(filename)
 
     # Write to file
-    os.chdir('C:/Users/mflores1/dropbox/Mauricio/')
+    os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
 
     try:
         with open('email_results_just_ids.csv', 'w') as to_write:
