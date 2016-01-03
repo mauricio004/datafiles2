@@ -6,7 +6,7 @@ import time
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 
-def readDataFromFile(filename):
+def read_data_from_file(filename):
     """
     xxx
     """
@@ -20,7 +20,7 @@ def readDataFromFile(filename):
 
 
 # ------------------------ ForRent.com ---------------------------------------------------------------
-def readTextForRent(tuples):
+def read_text_for_rent(tuples):
 
     customer_id_dict = {}
     for text_tuple in tuples:
@@ -69,7 +69,7 @@ def readTextForRent(tuples):
 
 
 # ------------------------ HotPads.com ---------------------------------------------------------------
-def readTextHotPads(tuples):
+def read_text_hot_pads(tuples):
 
     customer_id_dict = {}
     for text_tuple in tuples:
@@ -105,7 +105,7 @@ def readTextHotPads(tuples):
 
 
 # ------------------------ ApartmentGuide.com ---------------------------------------------------------------
-def readTextApartmentGuide(tuples):
+def read_text_apartment_guide(tuples):
 
     customer_id_dict = {}
     for text_tuple in tuples:
@@ -153,18 +153,55 @@ def readTextApartmentGuide(tuples):
     return customer_id_dict
 
 
+# ------------------------ ApartmentList.com ---------------------------------------------------------------
+def read_text_apartment_list(tuples):
+
+    customer_id_dict = {}
+    for text_tuple in tuples:
+        (customer_id, ils_id, ils, text) = text_tuple
+        if ils == 'ApartmentList.com':
+            # Search for comments' text
+            comments_match = re.search(r'Notes:(.*?)=====', text, re.DOTALL)
+            # Create a default date
+            customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+            # Add comment's text
+            if comments_match:
+                customer_id_comments = comments_match.group(1).strip()
+            # Add 'cannotFindCommentsText'
+            else:
+                customer_id_comments = 'cannotFindCommentsText'
+            # Add customer id
+            if customer_id not in customer_id_dict:
+                customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+            # Customer id already in dictionary
+            else:
+                # Move to next customer id if not comment's match
+                if not comments_match:
+                    continue
+                # Replace customer id
+                else:
+                    customer_id_dict.pop(customer_id, None)
+                    customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+        else:
+            print 'Not an ApartmentList.com email'
+            continue
+    return customer_id_dict
+
+
 if __name__ == '__main__':
-    # Change filename to read ILS
+    # Change filename to read ILS data
     # ForRent.com
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/for_rent_4_month.csv"
-    # customer_id_dict_result = readTextForRent(readDataFromFile(filename))
+    # customer_id_dict_result = read_text_for_rent(read_data_from_file(filename))
     # HotPads
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/hot_pads_4_month.csv"
-    # customer_id_dict_result = readTextHotPads(readDataFromFile(filename))
+    # customer_id_dict_result = read_text_hot_pads(read_data_from_file(filename))
     # ApartmentGuide.com
-    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_guide_4_month.csv"
-    customer_id_dict_result = readTextApartmentGuide(readDataFromFile(filename))
-
+    # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_guide_4_month.csv"
+    # customer_id_dict_result = read_text_apartment_guide(read_data_from_file(filename))
+    # ApartmentList.com
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_list_4_month.csv"
+    customer_id_dict_result = read_text_apartment_list(read_data_from_file(filename))
 
     # Write to file
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')

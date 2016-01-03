@@ -22,7 +22,7 @@ def readDataFromFile(filename):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_guide_1_month.csv"
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
     cust_id_lst = readDataFromFile(filename)
 
     # Write to file
