@@ -188,6 +188,58 @@ def read_text_apartment_list(tuples):
     return customer_id_dict
 
 
+# ------------------------ New Property Website ---------------------------------------------------------------
+def read_text_new_property_website(tuples):
+
+    customer_id_dict = {}
+    for text_tuple in tuples:
+        (customer_id, ils_id, ils, text) = text_tuple
+        if ils == 'New Property Website':
+            soup = BeautifulSoup(text, 'html5lib')
+            text_u = soup.get_text()
+            text = text_u.encode('ascii', 'ignore')
+            # Search for comments' text
+            comments_match = re.search(r'Comments:(.*)', text, re.DOTALL)
+            # Search for date
+            date_match = re.search(r'Date Submitted:(.*?)Prospect Name:', text, re.DOTALL)
+            # Add date
+            if date_match:
+                # Read data from date text e.g. Date Submitted: 11/23/2015
+                customer_id_date_str = date_match.group(1).strip()
+                try:
+                    customer_id_date = time.strptime(customer_id_date_str, '%m/%d/%Y')
+                # Add default date '01/01/2100'
+                except ValueError:
+                    customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+            # Add default date '01/01/2100'
+            else:
+                customer_id_date = time.strptime('01/01/2100', '%m/%d/%Y')
+            # Add comment's text
+            if comments_match:
+                customer_id_comments = comments_match.group(1).strip()
+            # Add 'cannotFindCommentsText'
+            else:
+                customer_id_comments = 'cannotFindCommentsText'
+            # Add customer id
+            if customer_id not in customer_id_dict:
+                customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+            # Customer id already in dictionary
+            else:
+                # Find customer id's date
+                date_in_dict = customer_id_dict[customer_id][0]
+                # Move to next customer id
+                if not comments_match:
+                    continue
+                # Replace customer id
+                elif customer_id_date < date_in_dict:
+                        customer_id_dict.pop(customer_id, None)
+                        customer_id_dict[customer_id] = (customer_id_date, customer_id_comments)
+        else:
+            print 'Not a New Property Website email'
+            continue
+    return customer_id_dict
+
+
 if __name__ == '__main__':
     # Change filename to read ILS data
     # ForRent.com
@@ -200,8 +252,11 @@ if __name__ == '__main__':
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_guide_4_month.csv"
     # customer_id_dict_result = read_text_apartment_guide(read_data_from_file(filename))
     # ApartmentList.com
-    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_list_4_month.csv"
-    customer_id_dict_result = read_text_apartment_list(read_data_from_file(filename))
+    # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_list_4_month.csv"
+    # customer_id_dict_result = read_text_apartment_list(read_data_from_file(filename))
+    # Property Website
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
+    customer_id_dict_result = read_text_new_property_website(read_data_from_file(filename))
 
     # Write to file
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
