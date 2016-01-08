@@ -19,20 +19,6 @@ def checkPascal(numTrials, roll):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def rollLoadedDie():
     if random.random() < 1.0/5.5:
         return 6
@@ -40,20 +26,6 @@ def rollLoadedDie():
         return random.choice([1,2,3,4,5])
 
 ##checkPascal(10000, rollLoadedDie)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def flip(numFlips):
