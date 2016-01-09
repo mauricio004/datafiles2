@@ -3,7 +3,8 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/../ci/recommendations.py" line="44" />
     <bookmark url="file://$PROJECT_DIR$/../ci/chapter2_deli_practice.py" line="96" />
-    <bookmark url="file://$PROJECT_DIR$/../rp_conversion/test_connection.py" line="96" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/../rp_conversion/test_connection.py" line="121" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/lecture5.py" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="819ff201-bea4-40c1-b1b8-8accc27e532f" name="Default" comment="" />
@@ -26,25 +27,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_connection.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_connection.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.9116883">
+              <caret line="104" column="39" selection-start-line="103" selection-start-column="22" selection-end-line="104" selection-end-column="39" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
-                <element signature="e#73#419#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lecture5.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="avl_s_ns.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../rp/avl_s_ns.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="149" column="90" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lecture5.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lecture5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.096045196">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding>
+                <marker date="1452285098578" expanded="true" signature="280:831" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,22 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monteCarloSimulations.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monteCarloSimulations.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -127,10 +130,10 @@
         <option value="$PROJECT_DIR$/../rp/avl_word_2.py" />
         <option value="$PROJECT_DIR$/../udacity/media.py" />
         <option value="$PROJECT_DIR$/../udacity/inheritance.py" />
-        <option value="$PROJECT_DIR$/../rp_conversion/test_connection.py" />
         <option value="$PROJECT_DIR$/loadWords/Lecture5.py" />
         <option value="$PROJECT_DIR$/monteCarloSimulations.py" />
         <option value="$PROJECT_DIR$/lecture5.py" />
+        <option value="$PROJECT_DIR$/../rp_conversion/test_connection.py" />
       </list>
     </option>
   </component>
@@ -138,10 +141,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1258" />
+    <option name="y" value="658" />
+    <option name="width" value="1166" />
+    <option name="height" value="713" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -166,8 +169,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,14 +212,8 @@
               <option name="myItemId" value="python_mit_3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="python_mit_3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_mit_3" />
+              <option name="myItemId" value="rp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,14 +221,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="python_mit_3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="python_mit_3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="loadWords" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -280,40 +269,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="avl_word_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../rp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_word_2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="avl_word_all_customer_ids" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../rp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_word_all_customer_ids.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="test_connection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -327,6 +282,40 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rp_conversion" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp_conversion/test_connection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="lecture5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_mit_3" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="lectureCode_estPi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_mit_3" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lectureCode_estPi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -492,17 +481,17 @@
       <item index="1" class="java.lang.String" itemvalue="Python.ps2" />
       <item index="2" class="java.lang.String" itemvalue="Python.media" />
       <item index="3" class="java.lang.String" itemvalue="Python.inheritance" />
-      <item index="4" class="java.lang.String" itemvalue="Python.avl_word_2" />
-      <item index="5" class="java.lang.String" itemvalue="Python.avl_word_all_customer_ids" />
-      <item index="6" class="java.lang.String" itemvalue="Python.test_connection" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test_connection" />
+      <item index="5" class="java.lang.String" itemvalue="Python.lecture5" />
+      <item index="6" class="java.lang.String" itemvalue="Python.lectureCode_estPi" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.test_connection" />
-        <item index="1" class="java.lang.String" itemvalue="Python.inheritance" />
-        <item index="2" class="java.lang.String" itemvalue="Python.media" />
-        <item index="3" class="java.lang.String" itemvalue="Python.avl_word_2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.avl_word_all_customer_ids" />
+        <item index="1" class="java.lang.String" itemvalue="Python.lectureCode_estPi" />
+        <item index="2" class="java.lang.String" itemvalue="Python.lecture5" />
+        <item index="3" class="java.lang.String" itemvalue="Python.inheritance" />
+        <item index="4" class="java.lang.String" itemvalue="Python.media" />
       </list>
     </recent_temporary>
   </component>
@@ -520,20 +509,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1258" y="658" width="1166" height="713" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31770834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35652173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3390558" sideWeight="0.5022676" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41033757" sideWeight="0.49773243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2867012" sideWeight="0.49773243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.278481" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47352025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -563,7 +552,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="367" />
+      <option name="time" value="377" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -574,7 +563,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#73#419#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,7 +573,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#73#419#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -829,20 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../udacity/fresh_tomatoes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../udacity/entertainment_center.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55172414">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../udacity/check_profanity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7586207">
@@ -864,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../udacity/inheritance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44270834">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ci/chapter2_deli_practice.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.734375">
@@ -879,20 +855,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../udacity/media.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.478125">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
+    <entry file="file://$PROJECT_DIR$/lecture5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#25#40#0" expanded="true" />
-            <element signature="e#73#419#0" expanded="false" />
+            <marker date="1452285098578" expanded="true" signature="280:831" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -905,19 +873,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monteCarloSimulations.py">
+    <entry file="file://$PROJECT_DIR$/../rp/avl_s_ns.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="149" column="90" selection-start-line="149" selection-start-column="20" selection-end-line="149" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lecture5.py">
+    <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.096045196">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.9116883">
+          <caret line="104" column="39" selection-start-line="103" selection-start-column="22" selection-end-line="104" selection-end-column="39" />
+          <folding>
+            <element signature="e#25#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
