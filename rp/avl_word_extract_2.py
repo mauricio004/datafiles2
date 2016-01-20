@@ -243,8 +243,8 @@ def read_text_new_property_website(tuples):
 if __name__ == '__main__':
     # Change filename to read ILS data
     # ForRent.com
-    # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/for_rent_4_month.csv"
-    # customer_id_dict_result = read_text_for_rent(read_data_from_file(filename))
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/for_rent_4_month.csv"
+    customer_id_dict_result = read_text_for_rent(read_data_from_file(filename))
     # HotPads
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/hot_pads_4_month.csv"
     # customer_id_dict_result = read_text_hot_pads(read_data_from_file(filename))
@@ -255,8 +255,8 @@ if __name__ == '__main__':
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/apt_list_4_month.csv"
     # customer_id_dict_result = read_text_apartment_list(read_data_from_file(filename))
     # Property Website
-    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
-    customer_id_dict_result = read_text_new_property_website(read_data_from_file(filename))
+    # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
+    # customer_id_dict_result = read_text_new_property_website(read_data_from_file(filename))
 
     # Write to file
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
