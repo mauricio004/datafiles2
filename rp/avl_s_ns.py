@@ -2,7 +2,6 @@ __author__ = 'MFlores1'
 import csv
 import random
 
-
 def matchRecord(filename_base, filename_new_data, dir_output):
     """
     Combines data from two files with a field in common.

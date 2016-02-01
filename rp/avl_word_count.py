@@ -66,18 +66,19 @@ def write_result_to_file(customer_dict, filename_results):
                 date, match_boolean, comments_count, keywords_count = v
                 # sort keywords by name (key in dictionary)
                 sorted_x = sorted(keywords_count.items(), key=operator.itemgetter(0))
-                writer.writerow(['Property Website', k, sorted_x[0][1], sorted_x[1][1], sorted_x[2][1], sorted_x[3][1],
+                writer.writerow(['Hotpads-Zillow', k, sorted_x[0][1], sorted_x[1][1], sorted_x[2][1], sorted_x[3][1],
                                 sorted_x[4][1],
                                 sorted_x[5][1], sorted_x[6][1], sorted_x[7][1], sorted_x[8][1], sorted_x[9][1],
                                 sorted_x[10][1], sorted_x[11][1], sorted_x[12][1], sorted_x[13][1], sorted_x[14][1],
                                 sorted_x[15][1], sorted_x[16][1], sorted_x[17][1], sorted_x[18][1], sorted_x[19][1],
                                 sorted_x[20][1], sorted_x[21][1], sorted_x[22][1], sorted_x[23][1], sorted_x[24][1],
-                                sorted_x[25][1], sorted_x[26][1], sorted_x[27][1], sorted_x[28][1], sorted_x[29][1]])
+                                sorted_x[25][1], sorted_x[26][1], sorted_x[27][1], sorted_x[28][1], sorted_x[29][1],
+                                sorted_x[30][1], sorted_x[31][1]])
     except Exception as err:
         print 'Error writing: ' + str(err)
 
 # Need to change both lines
-filename_txt = "C:/Users/mflores1/dropbox/Mauricio/avln/test_count.csv"
+filename_txt = "C:/Users/mflores1/dropbox/Mauricio/avln/for_rent_4_month.csv"
 customer_dict = read_text_for_rent(read_data_from_file(filename_txt))
 
 filename_keywords = "C:/Users/mflores1/dropbox/Mauricio/avln/keywords.txt"
