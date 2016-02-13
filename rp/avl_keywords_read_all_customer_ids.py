@@ -3,9 +3,12 @@ import re
 import os
 import csv
 
-def readDataFromFile(filename):
+
+def read_data_from_file(filename):
     """
-    xxx
+    This function separates data from IT in individual email leads
+    :param filename: a .csv file with all email leads
+    :return: a list with customer id's
     """
     customer_id_lst = []
     try:
@@ -22,12 +25,13 @@ def readDataFromFile(filename):
 
 
 if __name__ == '__main__':
-    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
-    cust_id_lst = readDataFromFile(filename)
+    filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_1_month.csv"
+    cust_id_lst = read_data_from_file(filename)
 
-    # Write to file
+    # Write to this directory
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
 
+    # Creates a .csv file and write to directory --- just id's
     try:
         with open('email_results_just_ids.csv', 'w') as to_write:
             writer = csv.writer(to_write, delimiter=',')

@@ -26,28 +26,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="avl_word_extract_2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp/avl_word_extract_2.py">
+      <file leaf-file-name="avl_keywords_read_all_customer_ids.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_read_all_customer_ids.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
-                <element signature="e#682#2703#0" expanded="false" />
-                <element signature="e#2846#4366#0" expanded="false" />
-                <element signature="e#4523#6552#0" expanded="false" />
-                <element signature="e#6707#8033#0" expanded="false" />
-                <element signature="e#8197#10401#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avl_word_count.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp/avl_word_count.py">
+      <file leaf-file-name="avl_keywords_extract.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_extract.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avl_keywords_word_count.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_word_count.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
               <folding>
                 <element signature="e#25#34#0" expanded="true" />
               </folding>
@@ -55,11 +62,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avl_keywords_report.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="avl_phone_number_count.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../rp/avl_phone_number_count.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8134796">
+              <caret line="63" column="92" selection-start-line="63" selection-start-column="92" selection-end-line="63" selection-end-column="92" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="avl_keywords_report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89615387">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
               <folding>
                 <element signature="e#25#35#0" expanded="true" />
               </folding>
@@ -67,43 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matching.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp_conversion/matching.py">
+      <file leaf-file-name="learn_re_phones.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../rp/learn_re_phones.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_connection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="avl_s_ns.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp/avl_s_ns.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-              <folding>
-                <element signature="e#24#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_import_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../rp/test_import_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -122,10 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chapter 13.py" />
-        <option value="$PROJECT_DIR$/chapter_12_deliberate_practice.py" />
-        <option value="$PROJECT_DIR$/../rp/avl_word_count_2.py" />
-        <option value="$PROJECT_DIR$/../rp/avalon_word_2.py" />
         <option value="$PROJECT_DIR$/lectureCode_intDict.py" />
         <option value="$PROJECT_DIR$/files_finger_exercises_intDictTests.py" />
         <option value="$PROJECT_DIR$/../rp/avl_word_1.py" />
@@ -168,11 +151,15 @@
         <option value="$PROJECT_DIR$/../rp_conversion/matching.py" />
         <option value="$PROJECT_DIR$/../rp_conversion/conversion_connection.py" />
         <option value="$PROJECT_DIR$/../rp/import_avl_keywords.py" />
-        <option value="$PROJECT_DIR$/../rp/avl_word_count.py" />
-        <option value="$PROJECT_DIR$/../rp/avl_word_extract_2.py" />
         <option value="$PROJECT_DIR$/../rp/test_import_data.py" />
         <option value="$PROJECT_DIR$/../rp/avl_s_ns.py" />
         <option value="$PROJECT_DIR$/../rp/avl_keywords_report.py" />
+        <option value="$PROJECT_DIR$/../rp/avl_word_count.py" />
+        <option value="$PROJECT_DIR$/../rp/avl_word_extract_2.py" />
+        <option value="$PROJECT_DIR$/../rp/learn_re_phones.py" />
+        <option value="$PROJECT_DIR$/../rp/avl_keywords_read_all_customer_ids.py" />
+        <option value="$PROJECT_DIR$/../rp/avl_keywords_word_count.py" />
+        <option value="$PROJECT_DIR$/../rp/avl_phone_number_count.py" />
       </list>
     </option>
   </component>
@@ -180,10 +167,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="188" />
-    <option name="width" value="1728" />
-    <option name="height" value="889" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -274,25 +261,8 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.ide.scratch.NewScratchFileAction" value="HTML" />
   </component>
-  <component name="RunManager" selected="Python.avl_keywords_report">
-    <configuration default="false" name="conversion_connection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../rp_conversion" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rp_conversion" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp_conversion/conversion_connection.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="avl_word_extract_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.avl_phone_number_count">
+    <configuration default="false" name="avl_keywords_word_count" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -304,12 +274,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_word_extract_2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_keywords_word_count.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="import_avl_keywords" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="learn_re_phones" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -321,12 +291,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/import_avl_keywords.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/learn_re_phones.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="avl_keywords_report" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="avl_phone_number_count" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -338,12 +308,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_keywords_report.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_phone_number_count.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="test_import_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="avl_keywords_read_all_customer_ids" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -355,7 +325,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="rp" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/test_import_data.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_keywords_read_all_customer_ids.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="avl_keywords_extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../rp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rp" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../rp/avl_keywords_extract.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -519,19 +506,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.avl_word_count" />
       <item index="1" class="java.lang.String" itemvalue="Python.ps2" />
-      <item index="2" class="java.lang.String" itemvalue="Python.conversion_connection" />
-      <item index="3" class="java.lang.String" itemvalue="Python.avl_word_extract_2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.import_avl_keywords" />
-      <item index="5" class="java.lang.String" itemvalue="Python.avl_keywords_report" />
-      <item index="6" class="java.lang.String" itemvalue="Python.test_import_data" />
+      <item index="2" class="java.lang.String" itemvalue="Python.avl_keywords_word_count" />
+      <item index="3" class="java.lang.String" itemvalue="Python.learn_re_phones" />
+      <item index="4" class="java.lang.String" itemvalue="Python.avl_phone_number_count" />
+      <item index="5" class="java.lang.String" itemvalue="Python.avl_keywords_read_all_customer_ids" />
+      <item index="6" class="java.lang.String" itemvalue="Python.avl_keywords_extract" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.avl_keywords_report" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_import_data" />
-        <item index="2" class="java.lang.String" itemvalue="Python.avl_word_extract_2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.import_avl_keywords" />
-        <item index="4" class="java.lang.String" itemvalue="Python.conversion_connection" />
+        <item index="0" class="java.lang.String" itemvalue="Python.avl_phone_number_count" />
+        <item index="1" class="java.lang.String" itemvalue="Python.avl_keywords_word_count" />
+        <item index="2" class="java.lang.String" itemvalue="Python.avl_keywords_extract" />
+        <item index="3" class="java.lang.String" itemvalue="Python.avl_keywords_read_all_customer_ids" />
+        <item index="4" class="java.lang.String" itemvalue="Python.learn_re_phones" />
       </list>
     </recent_temporary>
   </component>
@@ -549,20 +536,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="188" width="1728" height="889" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30140188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3390558" sideWeight="0.5022676" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29833546" sideWeight="0.49773243" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29746836" sideWeight="0.49773243" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29324895" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23523207" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -592,32 +579,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="480" />
+      <option name="time" value="491" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lectureCode_plotting-seg2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lectureCode_randomWalks-segment2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35326087">
-          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../python_google_2/wordcount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm40/system/python_stubs/-762174762/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33224756">
@@ -809,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rp/bs_learn_sample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../python_mit_2/ps3_hangman.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0921305">
@@ -893,22 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../rp_conversion/matching.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../rp/import_avl_keywords.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82087225">
@@ -923,55 +866,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rp/test_import_data.py">
+    <entry file="file://$PROJECT_DIR$/../rp_conversion/matching.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="1.4413043">
+          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp_conversion/test_connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37173912">
+          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../rp/avl_s_ns.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.48043478">
           <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rp/avl_word_count.py">
+    <entry file="file://$PROJECT_DIR$/../rp/test_import_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.35108694">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rp/avl_word_extract_2.py">
+    <entry file="file://$PROJECT_DIR$/../rp/bs_learn_sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp/learn_re_phones.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_read_all_customer_ids.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-            <element signature="e#682#2703#0" expanded="false" />
-            <element signature="e#2846#4366#0" expanded="false" />
-            <element signature="e#4523#6552#0" expanded="false" />
-            <element signature="e#6707#8033#0" expanded="false" />
-            <element signature="e#8197#10401#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89615387">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
           <folding>
             <element signature="e#25#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp/avl_keywords_word_count.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rp/avl_phone_number_count.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8134796">
+          <caret line="63" column="92" selection-start-line="63" selection-start-column="92" selection-end-line="63" selection-end-column="92" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -8,11 +8,14 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 def read_data_from_file(filename):
     """
-    xxx
+    This function separates data from IT in individual email leads
+    :param filename: a .csv file with all email leads
+    :return: a tuple (customer id, ils id, ils name, email in plaintext or html)
     """
     try:
         with open(filename, "r") as f:
-            # Separate data by customer id.  Store in tuples -> (CustomerID, ils id, ils, plaintext/html text)
+            # Separate email leads by customer id.  Store in tuples -> (CustomerID, ils id, ils name,
+            # plaintext/html text)
             tuples = re.findall(r'CustomerID:(\d+),(\d+),(.*?),(.*?)(?=CustomerID:)', f.read(), re.DOTALL)
     except Exception as err:
         print 'Error reading file ' + str(err)
@@ -21,7 +24,12 @@ def read_data_from_file(filename):
 
 # ------------------------ ForRent.com ---------------------------------------------------------------
 def read_text_for_rent(tuples):
-
+    """
+    This function reads the comment's sections on each email lead. It works for ForRent.com
+    :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
+    :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
+    (if no date available use '01/01/2100' as default) and text in comment.
+    """
     customer_id_dict = {}
     for text_tuple in tuples:
         (customer_id, ils_id, ils, text) = text_tuple
@@ -70,7 +78,13 @@ def read_text_for_rent(tuples):
 
 # ------------------------ HotPads.com ---------------------------------------------------------------
 def read_text_hot_pads(tuples):
-
+    """
+    This function reads the comment's sections on each email lead. It works for hot pads.  It uses beautiful
+    soup to extract text in comment.
+    :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
+    :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
+    (if no date available use '01/01/2100' as default) and text in comment.
+    """
     customer_id_dict = {}
     for text_tuple in tuples:
         (customer_id, ils_id, ils, text) = text_tuple
@@ -106,7 +120,12 @@ def read_text_hot_pads(tuples):
 
 # ------------------------ ApartmentGuide.com ---------------------------------------------------------------
 def read_text_apartment_guide(tuples):
-
+    """
+    This function reads the comment's sections on each email lead. It works for apartment guide.
+    :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
+    :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
+    (if no date available use '01/01/2100' as default) and text in comment.
+    """
     customer_id_dict = {}
     for text_tuple in tuples:
         (customer_id, ils_id, ils, text) = text_tuple
@@ -155,7 +174,12 @@ def read_text_apartment_guide(tuples):
 
 # ------------------------ ApartmentList.com ---------------------------------------------------------------
 def read_text_apartment_list(tuples):
-
+    """
+    This function reads the comment's sections on each email lead. It works for apartment list.
+    :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
+    :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
+    (if no date available use '01/01/2100' as default) and text in comment.
+    """
     customer_id_dict = {}
     for text_tuple in tuples:
         (customer_id, ils_id, ils, text) = text_tuple
@@ -190,7 +214,13 @@ def read_text_apartment_list(tuples):
 
 # ------------------------ New Property Website ---------------------------------------------------------------
 def read_text_new_property_website(tuples):
-
+    """
+    This function reads the comment's sections on each email lead. It works for property website.
+    It uses beautiful soup to extract text in comment.
+    :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
+    :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
+    (if no date available use '01/01/2100' as default) and text in comment.
+    """
     customer_id_dict = {}
     for text_tuple in tuples:
         (customer_id, ils_id, ils, text) = text_tuple
@@ -258,7 +288,7 @@ if __name__ == '__main__':
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
     # customer_id_dict_result = read_text_new_property_website(read_data_from_file(filename))
 
-    # Write to file
+    # Write to file as .csv
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
     try:
         with open('email_results.csv', 'w') as to_write:
