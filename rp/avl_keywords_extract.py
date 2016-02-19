@@ -80,7 +80,7 @@ def read_text_for_rent(tuples):
 def read_text_hot_pads(tuples):
     """
     This function reads the comment's sections on each email lead. It works for hot pads.  It uses beautiful
-    soup to extract text in comment.
+    soup library to parse html to text in comment.
     :param tuples: a tuple (customer id, ils id, ils name, comment's plaintext/html)
     :return: a dictionary with customer id as key and a tuple as value.  Tuple includes date
     (if no date available use '01/01/2100' as default) and text in comment.
@@ -288,7 +288,7 @@ if __name__ == '__main__':
     # filename = "C:/Users/mflores1/dropbox/Mauricio/avln/property_website_4_month.csv"
     # customer_id_dict_result = read_text_new_property_website(read_data_from_file(filename))
 
-    # Write to file as .csv
+    # Write to .csv file in disk
     os.chdir('C:/Users/mflores1/dropbox/Mauricio/avln')
     try:
         with open('email_results.csv', 'w') as to_write:

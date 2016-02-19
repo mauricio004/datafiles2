@@ -114,6 +114,7 @@ def write_results_to_file(customer_dict, filename_results):
 filename_txt = "C:/Users/mflores1/dropbox/Mauricio/avln/for_rent_4_month.csv"
 customer_dict = read_text_for_rent(read_data_from_file(filename_txt))
 
+
 filename_keywords = "C:/Users/mflores1/dropbox/Mauricio/avln/keywords.txt"
 keyword_dict = read_keywords(filename_keywords)
 # split_text_in_words(customer_dict, keyword_dict)

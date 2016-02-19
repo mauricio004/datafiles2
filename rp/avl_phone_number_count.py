@@ -41,9 +41,11 @@ def find_phone_in_comment(customer_dict):
 
 def write_phone_results_to_file(customer_phone_dict, filename_results):
     """
-    :param customer_phone_dict:
-    :param filename_results:
-    :return:
+    This function writes data to a .csv file.
+    :param customer_phone_dict: a dictionary with customer id as key and a tuple as value.
+    Tuple includes date, a boolean (True if any phone in comments, False otherwise) and the phone number if
+    found (otherwise use 'doesNotFindAPhoneNumber' as default text
+    :param filename_results: a string with name and location in disk to write file.
     """
     # Write .csv file to disk
     try:

@@ -6,7 +6,8 @@ import csv
 
 def read_data_from_file(filename):
     """
-    This function separates data from IT in individual email leads
+    This function separates data from IT in individual email leads.  It helps to count the total
+    customer id's in IT data.
     :param filename: a .csv file with all email leads
     :return: a list with customer id's
     """
