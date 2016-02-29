@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../ci/.idea/ci.iml" filepath="$PROJECT_DIR$/../ci/.idea/ci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../data_science_practice/.idea/data_science_practice.iml" filepath="$PROJECT_DIR$/../data_science_practice/.idea/data_science_practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/../oop/.idea/oop.iml" filepath="$PROJECT_DIR$/../oop/.idea/oop.iml" />
       <module fileurl="file://$PROJECT_DIR$/../python_google_2/.idea/python_google_2.iml" filepath="$PROJECT_DIR$/../python_google_2/.idea/python_google_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../python_mit_2/.idea/python_mit.iml" filepath="$PROJECT_DIR$/../python_mit_2/.idea/python_mit.iml" />

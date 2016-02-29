@@ -12,5 +12,6 @@
     <orderEntry type="module" module-name="udacity" />
     <orderEntry type="module" module-name="rp_conversion" />
     <orderEntry type="module" module-name="oop" />
+    <orderEntry type="module" module-name="data_science_practice" />
   </component>
 </module>
