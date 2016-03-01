@@ -44,25 +44,42 @@ import sys
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
-
-def print_words(filename):
-    txt_lst = []
+def read_file(filename):
     txt_dict = {}
     # Open file
     f = open(filename, 'r')
 
     # Read to string
-    text = f.readlines()
+    text = f.read()
 
     # Close file
     f.close()
 
     # Split text into a list of words
-    # txt_lst = text.split()
+    txt_lst = text.split()
 
     # Count words from list. Add to dictionary.
+    for w in txt_lst:
+        # Convert to lower case
+        w_lower = w.lower()
+        if w_lower not in txt_dict:
+            txt_dict[w_lower] = 0
+        else:
+            txt_dict[w_lower] += 1
+    return txt_dict
 
-    return text
+
+def print_words(filename):
+    txt_dict = read_file(filename)
+
+    for k in sorted(txt_dict.keys()):
+        print k, ' ', txt_dict[k]
+
+def print_top(filename):
+    txt_dict = read_file(filename)
+    txt_dict_top = {}
+
+
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
@@ -80,8 +97,9 @@ def main():
   # else:
   #   print 'unknown option: ' + option
   #   sys.exit(1)
-  filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\small.txt'
-  print print_words(filename)
+    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\small.txt'
+    # print_words(filename)
+    print_top(filename)
 
 if __name__ == '__main__':
   main()
