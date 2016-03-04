@@ -35,34 +35,60 @@ Suggested milestones for incremental development:
 """
 
 def extract_names(filename):
-  """
-  Given a file name for baby.html, returns a list starting with the year string
-  followed by the name-rank strings in alphabetical order.
-  ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
-  """
-  # +++your code here+++
-  return
+    """
+    Given a file name for baby.html, returns a list starting with the year string
+    followed by the name-rank strings in alphabetical order.
+    ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
+    """
+    names_lst = []
+
+    # Open file
+    f = open(filename, 'r')
+
+    # Copy file content to text
+    text = f.read()
+
+    # Use re to extract data
+    year_match = re.search(r'>Popularity in (\d\d\d\d)</h3>', text)
+    names_match = re.findall(r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', text)
+
+    # Copy to list
+    if year_match:
+        names_lst.append(year_match.group(1))
+    # Use k, boy, girl to unpack tuples
+
+
+    for n in names_match:
+        names_lst.append(n[1] + ' ' + n[0])
+        names_lst.append(n[2] + ' ' + n[0])
+
+    text = 0
 
 
 def main():
-  # This command-line parsing code is provided.
-  # Make a list of command line arguments, omitting the [0] element
-  # which is the script itself.
-  args = sys.argv[1:]
 
-  if not args:
-    print 'usage: [--summaryfile] file [file ...]'
-    sys.exit(1)
 
-  # Notice the summary flag and remove it from args if it is present.
-  summary = False
-  if args[0] == '--summaryfile':
-    summary = True
-    del args[0]
+  # # This command-line parsing code is provided.
+  # # Make a list of command line arguments, omitting the [0] element
+  # # which is the script itself.
+  # args = sys.argv[1:]
+  #
+  # if not args:
+  #   print 'usage: [--summaryfile] file [file ...]'
+  #   sys.exit(1)
+  #
+  # # Notice the summary flag and remove it from args if it is present.
+  # summary = False
+  # if args[0] == '--summaryfile':
+  #   summary = True
+  #   del args[0]
+  #
+  # # +++your code here+++
+  # # For each filename, get the names, then either print the text output
+  # # or write it to a summary file
 
-  # +++your code here+++
-  # For each filename, get the names, then either print the text output
-  # or write it to a summary file
+    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\babynames\\baby1990.html'
+    extract_names(filename)
   
 if __name__ == '__main__':
   main()

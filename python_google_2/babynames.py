@@ -45,7 +45,7 @@ def extract_names(filename):
     text = f.read()
 
     # Get the year
-    match_year = re.search(r'Popularity\sin\s(\d\d\d\d)', text)
+    match_year = re.search(r'Popularity\sin\s(\d\d\d\d)</h3>', text)
     if not match_year:
         sys.stderr.write('Could not find year')
         sys.exit(1)

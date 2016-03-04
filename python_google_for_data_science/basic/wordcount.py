@@ -63,7 +63,7 @@ def read_file(filename):
         # Convert to lower case
         w_lower = w.lower()
         if w_lower not in txt_dict:
-            txt_dict[w_lower] = 0
+            txt_dict[w_lower] = 1
         else:
             txt_dict[w_lower] += 1
     return txt_dict
@@ -75,11 +75,15 @@ def print_words(filename):
     for k in sorted(txt_dict.keys()):
         print k, ' ', txt_dict[k]
 
-def print_top(filename):
+def print_top(filename, top=20):
     txt_dict = read_file(filename)
-    txt_dict_top = {}
+    txt_list_tuples = sorted(txt_dict.items(), key=last_element, reverse=True)
 
+    for t in txt_list_tuples[:top]:
+        print t[0], ' ', t[1]
 
+def last_element(last):
+    return last[-1]
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
@@ -97,7 +101,7 @@ def main():
   # else:
   #   print 'unknown option: ' + option
   #   sys.exit(1)
-    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\small.txt'
+    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\\small.txt'
     # print_words(filename)
     print_top(filename)
 

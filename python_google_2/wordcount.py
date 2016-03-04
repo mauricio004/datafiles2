@@ -44,7 +44,7 @@ def print_top(filename):
 
 
 def main():
-    print_words('c:/users/mflores1/pycharmprojects/practicepython/python_google/small.txt')
+    print_top('C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\\small.txt')
     # print('-' * 60)
     # print_top('c:/users/mflores1/pycharmprojects/practicepython/small.txt')
 
