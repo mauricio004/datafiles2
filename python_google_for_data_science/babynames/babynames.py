@@ -8,6 +8,7 @@
 
 import sys
 import re
+import os
 
 """Baby Names exercise
 
@@ -55,40 +56,50 @@ def extract_names(filename):
     # Copy to list
     if year_match:
         names_lst.append(year_match.group(1))
-    # Use k, boy, girl to unpack tuples
 
-
+    # Create dictionary with names.  First name as key and rank as value. If name
+    # already in dictionary skip it.
+    names_rank_dict = {}
     for n in names_match:
-        names_lst.append(n[1] + ' ' + n[0])
-        names_lst.append(n[2] + ' ' + n[0])
+        # Unpack tuples
+        k, boy, girl = n
+        if boy not in names_rank_dict:
+            names_rank_dict[boy] = k
+        if girl not in names_rank_dict:
+            names_rank_dict[girl] = k
 
-    text = 0
+    # Sort dictionary by key (name)
+    sorted_names = sorted(names_rank_dict.keys())
 
+    # Append names to list
+    for n_sorted in sorted_names:
+        names_lst.append(n_sorted + ' ' + names_rank_dict[n_sorted])
+
+    return names_lst
 
 def main():
+    # This command-line parsing code is provided.
+    # Make a list of command line arguments, omitting the [0] element
+    # which is the script itself.
+    args = sys.argv[1:]
+    if not args:
+      print 'usage: [--summaryfile] file [file ...]'
+      sys.exit(1)
 
+    # Notice the summary flag and remove it from args if it is present.
+    summary = False
+    if args[0] == '--summaryfile':
+      summary = True
+      del args[0]
 
-  # # This command-line parsing code is provided.
-  # # Make a list of command line arguments, omitting the [0] element
-  # # which is the script itself.
-  # args = sys.argv[1:]
-  #
-  # if not args:
-  #   print 'usage: [--summaryfile] file [file ...]'
-  #   sys.exit(1)
-  #
-  # # Notice the summary flag and remove it from args if it is present.
-  # summary = False
-  # if args[0] == '--summaryfile':
-  #   summary = True
-  #   del args[0]
-  #
-  # # +++your code here+++
-  # # For each filename, get the names, then either print the text output
-  # # or write it to a summary file
+    # +++your code here+++
+    # For each filename, get the names, then either print the text output
+    # or write it to a summary file
 
-    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\babynames\\baby1990.html'
-    extract_names(filename)
+    filenames = os.listdir()
+
+    #filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\babynames\\baby2006.html'
+    # extract_names(filename)
   
 if __name__ == '__main__':
-  main()
+    main()

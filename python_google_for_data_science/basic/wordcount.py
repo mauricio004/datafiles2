@@ -88,22 +88,22 @@ def last_element(last):
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 def main():
-  # if len(sys.argv) != 3:
-  #   print 'usage: ./wordcount.py {--count | --topcount} file'
-  #   sys.exit(1)
-  #
-  # option = sys.argv[1]
-  # filename = sys.argv[2]
-  # if option == '--count':
-  #   print_words(filename)
-  # elif option == '--topcount':
-  #   print_top(filename)
-  # else:
-  #   print 'unknown option: ' + option
-  #   sys.exit(1)
-    filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\\small.txt'
+    if len(sys.argv) != 3:
+        print 'usage: ./wordcount.py {--count | --topcount} file'
+        sys.exit(1)
+
+    option = sys.argv[1]
+    filename = sys.argv[2]
+    if option == '--count':
+        print_words(filename)
+    elif option == '--topcount':
+        print_top(filename)
+    else:
+        print 'unknown option: ' + option
+        sys.exit(1)
+    # filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\basic\\small.txt'
     # print_words(filename)
-    print_top(filename)
+    # print_top(filename)
 
 if __name__ == '__main__':
   main()
