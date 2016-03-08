@@ -9,6 +9,7 @@
 import sys
 import re
 import os
+import glob
 
 """Baby Names exercise
 
@@ -83,23 +84,29 @@ def main():
     # which is the script itself.
     args = sys.argv[1:]
     if not args:
-      print 'usage: [--summaryfile] file [file ...]'
-      sys.exit(1)
+        print 'usage: [--summaryfile] file [file ...]'
+        sys.exit(1)
 
     # Notice the summary flag and remove it from args if it is present.
     summary = False
     if args[0] == '--summaryfile':
-      summary = True
-      del args[0]
+        summary = True
+        del args[0]
 
-    # +++your code here+++
     # For each filename, get the names, then either print the text output
     # or write it to a summary file
 
-    filenames = os.listdir()
+    for arg in args:
+        for filename in glob.glob(arg):
+            file_data = extract_names(filename)
+            text = '\n'.join(file_data)
 
-    #filename = 'C:\Users\mflores1\datafiles2\python_google_for_data_science\\babynames\\baby2006.html'
-    # extract_names(filename)
-  
+            if summary:
+                f_out = open(filename + '.summary.txt', 'w')
+                f_out.write(text)
+                f_out.close()
+            else:
+                print(text)
+
 if __name__ == '__main__':
     main()
